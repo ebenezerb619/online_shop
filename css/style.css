@@ -1,12 +1,14 @@
 body{
 font-family: Arial;
-background:#f4f4f4;
+background:#f2f2f2;
 margin:0;
 }
 
 nav{
-background:#333;
+background:#1e1e2f;
 padding:15px;
+display:flex;
+justify-content:space-between;
 }
 
 nav a{
@@ -17,33 +19,55 @@ font-weight:bold;
 }
 
 .container{
-width:80%;
+width:90%;
 margin:auto;
 margin-top:30px;
 }
 
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
 .card{
 background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-body{
 padding:15px;
-margin-bottom:10px;
+}
+
+.price{
+color:green;
+font-size:18px;
+font-weight:bold;
+}
+
+button{
+background:#007BFF;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
 border-radius:5px;
-box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+
+button:hover{
+background:#0056b3;
 }
 
 input{
 width:100%;
 padding:10px;
 margin-bottom:10px;
-}
-
-button{
-padding:10px;
-background:#333;
-color:white;
-border:none;
-cursor:pointer;
-}
-
-button:hover{
-background:#555;
 }

@@ -31,10 +31,17 @@
 </nav>
 
 <div class="container">
-
-<h1>Welcome to our Online Shop</h1>
+<h1>Welcome to Online Shop</h1>
 
 <p>Create an account and login to view products.</p>
+
+<p>Buy the best gadgets at affordable prices</p>
+
+<img src="images/laptop.jpg" width="400">
+
+
+
+
 
 </div>
 

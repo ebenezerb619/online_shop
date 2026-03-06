@@ -14,21 +14,21 @@
 
 <nav>
 
+<div>
+
 <a href="../index.php">Home</a>
 
-<?php if(isset($_SESSION['user_id'])){ ?>
+</div>
 
-<a href="../user/dashboard.php">Dashboard</a>
+<div>
+
 <a href="../user/products.php">Products</a>
+
 <a href="../user/profile.php">Profile</a>
+
 <a href="../auth/logout.php">Logout</a>
 
-<?php } else { ?>
-
-<a href="../auth/login.php">Login</a>
-<a href="../auth/register.php">Register</a>
-
-<?php } ?>
+</div>
 
 </nav>
 
