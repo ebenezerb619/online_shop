@@ -6,42 +6,34 @@
 <head>
 
 <title>Online Shop</title>
+
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<nav>
+<div class="center-box">
 
-<a href="index.php">Home</a>
+<div class="glass-card">
 
-<?php if(isset($_SESSION['user_id'])){ ?>
-
-<a href="user/dashboard.php">Dashboard</a>
-<a href="auth/logout.php">Logout</a>
-
-<?php } else { ?>
-
-<a href="auth/login.php">Login</a>
-<a href="auth/register.php">Register</a>
-
-<?php } ?>
-
-</nav>
-
-<div class="container">
-<h1>Welcome to Online Shop</h1>
-
-<p>Create an account and login to view products.</p>
+<h1>Online Shop</h1>
 
 <p>Buy the best gadgets at affordable prices</p>
 
-<img src="images/laptop.jpg" width="400">
+<div class="auth-buttons">
 
+<a class="btn" href="auth/login.php">Login</a>
 
+<a class="btn" href="auth/register.php">Register</a>
 
+</div>
 
+<a class="forgot" href="auth/reset_password.php">
+Forgot Password?
+</a>
+
+</div>
 
 </div>
 
