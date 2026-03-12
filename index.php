@@ -5,7 +5,7 @@
 
 <head>
 
-<title>Online Shop</title>
+<title>Opoku's Online Shop</title>
 
 <link rel="stylesheet" href="css/style.css">
 

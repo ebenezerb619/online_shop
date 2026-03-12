@@ -24,6 +24,28 @@ margin:auto;
 margin-top:30px;
 }
 
+.flash-message{
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.flash-success{
+  background: #e6ffed;
+  color: #1f6a2e;
+  border: 1px solid #94d3a2;
+}
+
+.flash-error{
+  background: #ffe6e6;
+  color: #8a1f1f;
+  border: 1px solid #d38a8a;
+}
+
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -68,6 +90,8 @@ background:#0056b3;
 
 input{
 width:100%;
+max-width:400px;
+box-sizing:border-box;
 padding:10px;
 margin-bottom:10px;
 }
@@ -84,6 +108,8 @@ height:80vh;
 text-align:center;
 
 }
+
+
 
 .auth-buttons{
 
@@ -113,13 +139,15 @@ background:#0056b3;
 
 display:block;
 margin-top:15px;
-color:#333;
-text-decoration:none;
+color:#007BFF;
+font-weight:600;
+text-decoration:underline; 
 
 }
 
 .forgot:hover{
 
+color:#0056b3;
 text-decoration:underline;
 
 }
@@ -259,7 +287,7 @@ display:block;
 
 margin-top:15px;
 
-color:white;
+color:#007BFF;
 
 text-decoration:none;
 
@@ -271,5 +299,233 @@ font-size:14px;
 .forgot:hover{
 
 text-decoration:underline;
+
+}
+
+/* DASHBOARD PAGE */
+
+.dashboard-body{
+background:#f4f6f9;
+font-family:Arial, sans-serif;
+margin:0;
+}
+
+/* NAVBAR */
+
+.dashboard-nav{
+background:#1e1e2f;
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+.nav-links a:hover{
+text-decoration:underline;
+}
+
+/* DASHBOARD CONTENT */
+
+.dashboard-container{
+width:90%;
+margin:auto;
+margin-top:40px;
+}
+
+/* CARD GRID */
+
+.dashboard-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+/* CARD */
+
+.dashboard-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h3{
+margin-top:0;
+}
+
+/* BUTTON */
+
+.card-btn{
+display:inline-block;
+margin-top:10px;
+background:#007BFF;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.card-btn:hover{
+background:#0056b3;
+}
+
+/* LOGIN PAGE TEXT */
+
+.login-container h2{
+color:white;
+}
+
+.login-container label{
+color:white;
+}
+
+.login-container p{
+color:white;
+}
+
+/* PROFILE PAGE TEXT */
+
+.profile-container h2{
+color:white;
+}
+
+.profile-container p{
+color:white;
+}
+
+.profile-container label{
+color:white;
+}
+
+/* PROFILE PAGE */
+
+.profile-container{
+
+width:90%;
+margin:auto;
+margin-top:40px;
+
+color:white;
+
+}
+
+
+/* CARD GRID */
+
+.profile-cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
+
+margin-top:30px;
+
+}
+
+
+/* CARD STYLE */
+
+.profile-card{
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(10px);
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+
+}
+
+
+.profile-card h2{
+
+margin-top:0;
+
+color:white;
+
+}
+
+
+/* INPUT FIELDS */
+
+.profile-card input{
+
+width:100%;
+
+padding:10px;
+
+margin-bottom:10px;
+
+border:none;
+
+border-radius:5px;
+
+}
+
+
+/* BUTTON */
+
+.profile-card button{
+
+background:#007BFF;
+
+color:white;
+
+padding:10px;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+
+.profile-card button:hover{
+
+background:#0056b3;
+
+}
+
+
+/* DELETE CARD */
+
+.delete-card{
+
+border:2px solid red;
+
+}
+
+
+.delete-btn{
+
+background:red;
+
+}
+
+
+.delete-btn:hover{
+
+background:darkred;
 
 }

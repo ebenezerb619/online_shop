@@ -16,7 +16,7 @@
 
 <div>
 
-<a href="../index.php">Home</a>
+<a href="../user/dashboard.php">Home</a>
 
 </div>
 
@@ -31,5 +31,11 @@
 </div>
 
 </nav>
+
+<?php if ($flash = get_flash()): ?>
+  <div class="flash-message flash-<?= htmlspecialchars($flash['type'], ENT_QUOTES, 'UTF-8'); ?>">
+    <?= htmlspecialchars($flash['message'], ENT_QUOTES, 'UTF-8'); ?>
+  </div>
+<?php endif; ?>
 
 <div class="container">

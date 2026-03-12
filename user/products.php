@@ -28,13 +28,17 @@ include "../templates/header.php";
 
 if(isset($_GET['search'])){
 
-$search=$_GET['search'];
+$search = trim($_GET['search']);
 
-$result=$conn->query("SELECT * FROM products WHERE name LIKE '%$search%'");
+$stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE ?");
+$like = "%{$search}%";
+$stmt->bind_param('s', $like);
+$stmt->execute();
+$result = $stmt->get_result();
 
 }else{
 
-$result=$conn->query("SELECT * FROM products");
+$result = $conn->query("SELECT * FROM products");
 
 }
 
@@ -48,9 +52,9 @@ while($row=$result->fetch_assoc()){
 
 <div class="card-body">
 
-<h3><?php echo $row['name']; ?></h3>
+<h3><?php echo htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8'); ?></h3>
 
-<p class="price">GHS <?php echo $row['price']; ?></p>
+<p class="price">GHS <?php echo htmlspecialchars($row['price'], ENT_QUOTES, 'UTF-8'); ?></p>
 
 <button>Buy Now</button>
 

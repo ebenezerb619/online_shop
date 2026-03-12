@@ -1,40 +1,59 @@
 <?php include "../config/db.php"; ?>
-<?php include "../templates/header.php"; ?>
 
 <?php
 
 if(isset($_POST['register'])){
 
-$fullname=$_POST['fullname'];
-$email=$_POST['email'];
+$fullname = trim($_POST['fullname']);
+$email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+$password = $_POST['password'];
 
-$password=password_hash($_POST['password'],PASSWORD_DEFAULT);
+if($fullname && $email && $password){
+  $hash = password_hash($password, PASSWORD_DEFAULT);
+  $stmt = $conn->prepare("INSERT INTO users (fullname, email, password) VALUES (?, ?, ?)");
+  $stmt->bind_param('sss', $fullname, $email, $hash);
 
-$sql="INSERT INTO users(fullname,email,password)
-VALUES('$fullname','$email','$password')";
-
-if($conn->query($sql)){
-
-echo "<p>Registration successful</p>";
-
+  if($stmt->execute()){
+    set_flash('success', 'Registration successful. You can now log in.');
+    header("Location: register.php");
+    exit;
+  } else {
+    set_flash('error', 'Registration failed. Please try again.');
+    header("Location: register.php");
+    exit;
+  }
+} else {
+  set_flash('error', 'Please fill in all fields with valid values.');
+  header("Location: register.php");
+  exit;
 }
 
 }
 
 ?>
 
-<h2>Register</h2>
+<?php include "../templates/header.php"; ?>
 
-<form method="POST">
+<div class="center-box">
+  <div class="card" style="max-width:420px; width:100%;">
+    <div class="card-body">
+      <h2>Register</h2>
 
-<input type="text" name="fullname" placeholder="Full Name" required>
+      <form method="POST">
 
-<input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="fullname" placeholder="Full Name" required>
 
-<input type="password" name="password" placeholder="Password" required>
+        <input type="email" name="email" placeholder="Email" required>
 
-<button name="register">Register</button>
+        <input type="password" name="password" placeholder="Password" required>
 
-</form>
+        <button name="register">Register</button>
+
+      </form>
+
+      <p style="margin-top:12px; font-size:0.9rem;">Already have an account? <a href="login.php">Login</a></p>
+    </div>
+  </div>
+</div>
 
 <?php include "../templates/footer.php"; ?>
